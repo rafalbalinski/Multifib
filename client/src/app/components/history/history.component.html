@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-header>
+
+    <mat-card-title>Calculated values</mat-card-title>
+
+  </mat-card-header>
+  <mat-card-content>
+
+    <table mat-table [dataSource]="store.alreadyCalculatedFibonacciValues$ | async | keyvalue" class="mat-elevation-z8">
+      <ng-container matColumnDef="index">
+        <th mat-header-cell *matHeaderCellDef> Index </th>
+        <td mat-cell *matCellDef="let element"> {{element.key}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef> Value </th>
+        <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['index', 'value'], sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['index', 'value'];"></tr>
+    </table>
+
+  </mat-card-content>
+
+  <load-spinner *ngIf="store.alreadyCalculatedFibonacciValuesLoading$ | async"></load-spinner>
+</mat-card>
+
+
+
+
+

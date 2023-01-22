@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Values I have seen</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <mat-chip-list>
+      <mat-chip *ngFor="let index of store.alreadyCountedValuesIndexes$ | async">
+        {{ index }}
+      </mat-chip>
+    </mat-chip-list>
+
+  </mat-card-content>
+
+  <load-spinner *ngIf="store.alreadyCountedValuesIndexesLoading$ | async"></load-spinner>
+</mat-card>
+
+
+
+
+

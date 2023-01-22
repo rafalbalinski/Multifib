@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.mat-table {
+  width: 100%;
+  box-shadow: none;
+}
+
+.mat-card {
+  height: 100%;
+}
+
+.mat-card-content {
+  overflow-y: auto;
+  height: calc(100% - 47px);
+}

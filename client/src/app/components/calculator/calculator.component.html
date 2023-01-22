@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+
+    <mat-card-title>Calculate new value</mat-card-title>
+
+  </mat-card-header>
+  <mat-card-content>
+
+    <mat-form-field>
+      <mat-label>Enter your value</mat-label>
+      <input matInput [formControl]="indexFormControl">
+      <mat-error *ngIf="indexFormControl.hasError('required')">value is required</mat-error>
+      <mat-error *ngIf="indexFormControl.hasError('pattern')">value is not a number</mat-error>
+    </mat-form-field>
+
+  </mat-card-content>
+  <mat-card-actions>
+
+    <button [disabled]="indexFormControl.invalid" (click)="onSubmit()" mat-flat-button color="primary">Submit</button>
+
+  </mat-card-actions>
+
+  <load-spinner *ngIf="store.calculateValueLoading$ | async"></load-spinner>
+</mat-card>
+
+
+
+
+
