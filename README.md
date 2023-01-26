@@ -48,7 +48,7 @@ Następnie utworzoną grupe należy dodać do wszystkich trzech usług
 ![screen8](./img/screen10.png)
 ![screen8](./img/screen11.png)
 
-## Tworzenie usługi elastik
+## Tworzenie usługi Elastic Beanstalk
 Po uprzednim utworzeniu środowiska w usłudzie Elastic Beanstalk, należy je skonfigurować
 dodając zmienne używane w kodzie aplikacji. Konfigurację tych zmiennych
 ilustruje poniższy screen:
