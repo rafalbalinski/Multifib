@@ -2,12 +2,12 @@
   display: grid;
   grid-gap: 30px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 190px 320px;
+  grid-template-rows: 210px 1fr;
   grid-template-areas:
     "calculator history"
     "available-indexes history";
   width: 100vw;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 30px;
   height: calc(100vh - 64px);
