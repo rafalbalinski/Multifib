@@ -55,8 +55,8 @@ app.get("/values/current", async (req, res) => {
 app.post("/values", async (req, res) => {
   const index = req.body.index;
 
-  if (parseInt(index) > 40) {
-    return res.status(422).send("Index too high");
+  if (parseInt(index) > 150) {
+    return res.status(422).send("Index too high (max 150)");
   }
 
   redisClient.hset("values", index, "Nothing yet!");
@@ -66,6 +66,4 @@ app.post("/values", async (req, res) => {
   res.send({ working: true });
 });
 
-app.listen(5000, (err) => {
-  console.log("Listening");
-});
+app.listen(5000, () => console.log("Listening"));

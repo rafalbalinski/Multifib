@@ -8,9 +8,32 @@ const redisClient = redis.createClient({
 });
 const sub = redisClient.duplicate();
 
-function fib(index) {
-  if (index < 2) return 1;
-  return fib(index - 1) + fib(index - 2);
+function matrixPower(matrix, n) {
+  if (n === 1) return matrix;
+  let result = matrixPower(matrix, Math.floor(n / 2));
+  result = multiplyMatrix(result, result);
+  if (n % 2 === 1) {
+    result = multiplyMatrix(result, matrix);
+  }
+  return result;
+}
+
+function multiplyMatrix(a, b) {
+  let c = [[0, 0], [0, 0]];
+  c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+  c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+  c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+  c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+  return c;
+}
+
+function fib(n) {
+  if (n === 0) {
+    return 0;
+  }
+  let matrix = [[1, 1], [1, 0]];
+  matrix = matrixPower(matrix, n - 1);
+  return matrix[0][0];
 }
 
 sub.on('message', (channel, message) => {
