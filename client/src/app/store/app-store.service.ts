@@ -22,7 +22,7 @@ export class AppStoreService {
     this.alreadyCalculatedFibonacciValuesLoading$.next(true);
     this.http.getAlreadyCalculatedFibonacciValues()
       .pipe(finalize(() => this.alreadyCalculatedFibonacciValuesLoading$.next(false)))
-      .subscribe((values: any) => this.alreadyCalculatedFibonacciValues$.next(values.data));
+      .subscribe((values: any) => this.alreadyCalculatedFibonacciValues$.next(values));
   }
 
   public getAlreadyCalculatedValuesIndexes(): void {
