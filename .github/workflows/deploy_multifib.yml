@@ -12,16 +12,16 @@ jobs:
         include:
           - dockerfile: ./Dockerfile
             context: client
-            image: rafalbalinski/dockerrepo:fib-client
+            image: rafalbalinski/fullstack:fib-client
           - dockerfile: ./Dockerfile
             context: server
-            image: rafalbalinski/dockerrepo:fib-server
+            image: rafalbalinski/fullstack:fib-server
           - dockerfile: ./Dockerfile
             context: worker
-            image: rafalbalinski/dockerrepo:fib-worker
+            image: rafalbalinski/fullstack:fib-worker
           - dockerfile: ./Dockerfile
             context: nginx
-            image: rafalbalinski/dockerrepo:fib-router
+            image: rafalbalinski/fullstack:fib-router
 
     steps:
 
@@ -62,8 +62,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: mbmultifib
-          environment_name: Mbmultifib-env-1
-          version_label: zzz
-          region: eu-north-1
+          application_name: rbmultifib
+          environment_name: Rbmultifib-env
+          version_label: 0.0.1
+          region: eu-east-1
           deployment_package: deploy.zip
