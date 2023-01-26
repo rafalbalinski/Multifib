@@ -10,8 +10,8 @@ export class AppStoreService {
   readonly alreadyCalculatedFibonacciValues$: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
   readonly alreadyCalculatedFibonacciValuesLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  readonly alreadyCountedValuesIndexes$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
-  readonly alreadyCountedValuesIndexesLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  readonly alreadyCalculatedValuesIndexes$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+  readonly alreadyCalculatedValuesIndexesLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   readonly calculateValueLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   readonly calculateValueSuccess$: Subject<boolean> = new Subject<boolean>();
@@ -25,11 +25,11 @@ export class AppStoreService {
       .subscribe((values: any) => this.alreadyCalculatedFibonacciValues$.next(values.data));
   }
 
-  public getAlreadyCountedValuesIndexes(): void {
-    this.alreadyCountedValuesIndexesLoading$.next(true);
-    this.http.getAlreadyCountedValuesIndexes()
-      .pipe(finalize(() => this.alreadyCountedValuesIndexesLoading$.next(false)))
-      .subscribe((values: any) => this.alreadyCountedValuesIndexes$.next(values.data));
+  public getAlreadyCalculatedValuesIndexes(): void {
+    this.alreadyCalculatedValuesIndexesLoading$.next(true);
+    this.http.getAlreadyCalculatedValuesIndexes()
+      .pipe(finalize(() => this.alreadyCalculatedValuesIndexesLoading$.next(false)))
+      .subscribe((values: any) => this.alreadyCalculatedValuesIndexes$.next(values.data));
   }
 
   public calculateValue(index: number): void {
@@ -40,7 +40,7 @@ export class AppStoreService {
         next: () => {
           this.calculateValueSuccess$.next(true);
           this.getAlreadyCalculatedFibonacciValues();
-          this.getAlreadyCountedValuesIndexes();
+          this.getAlreadyCalculatedValuesIndexes();
         },
         error: () => this.calculateValueSuccess$.next(false)
       });

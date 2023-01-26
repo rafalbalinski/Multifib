@@ -6,14 +6,14 @@
   <mat-card-content>
 
     <mat-chip-list>
-      <mat-chip *ngFor="let index of store.alreadyCountedValuesIndexes$ | async">
+      <mat-chip *ngFor="let index of store.alreadyCalculatedValuesIndexes$ | async">
         {{ index }}
       </mat-chip>
     </mat-chip-list>
 
   </mat-card-content>
 
-  <load-spinner *ngIf="store.alreadyCountedValuesIndexesLoading$ | async"></load-spinner>
+  <load-spinner *ngIf="store.alreadyCalculatedValuesIndexesLoading$ | async"></load-spinner>
 </mat-card>
 
 

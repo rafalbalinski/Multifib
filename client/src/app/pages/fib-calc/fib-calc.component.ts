@@ -11,7 +11,7 @@ export class FibCalcComponent implements OnInit {
   constructor(private store: AppStoreService) { }
 
   public ngOnInit(): void {
-    this.store.getAlreadyCountedValuesIndexes();
+    this.store.getAlreadyCalculatedValuesIndexes();
     this.store.getAlreadyCalculatedFibonacciValues();
   }
 

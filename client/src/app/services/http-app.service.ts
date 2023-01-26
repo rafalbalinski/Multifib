@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { map, Observable } from "rxjs";
+import { CalculatedIndexes } from "../models/calculated-indexes";
 
 @Injectable({
   providedIn: "root"
@@ -14,13 +15,14 @@ export class HttpAppService {
     return this.http.get<any>(url)
   }
 
-  public getAlreadyCountedValuesIndexes(): Observable<any> {
+  public getAlreadyCalculatedValuesIndexes(): Observable<number[]> {
     const url = '/api/values/all';
-    return this.http.get<any>(url)
+    return this.http.get<CalculatedIndexes[]>(url)
+      .pipe(map((calculatedIndexes: CalculatedIndexes[]) => calculatedIndexes.map((calculatedIndex: CalculatedIndexes) => calculatedIndex.number)));
   }
 
   public calculateValue(index: number): Observable<any> {
     const url = '/api/values';
-    return this.http.post<any>(url, {index});
+    return this.http.post<any>(url, {index: index});
   }
 }
