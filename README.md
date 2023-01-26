@@ -90,3 +90,7 @@ ilustruje poniższy screen:
     <h2>Tworzenie grupy bezpieczeństwa</h2> 
 </a>
 
+<a href=https://github.com/rafalbalinski/Multifib/blob/master/README_AWS_CLI.md>
+    <h2>AWS CLI</h2> 
+</a>
+
