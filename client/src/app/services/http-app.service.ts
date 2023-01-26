@@ -21,6 +21,6 @@ export class HttpAppService {
 
   public calculateValue(index: number): Observable<any> {
     const url = '/api/values';
-    return this.http.post<any>(url, index);
+    return this.http.post<any>(url, {index});
   }
 }
