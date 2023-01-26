@@ -6,7 +6,10 @@
   <mat-card-content>
 
     <mat-chip-list>
-      <mat-chip *ngFor="let index of store.alreadyCalculatedValuesIndexes$ | async">
+      <mat-chip
+        *ngFor="let index of store.alreadyCalculatedValuesIndexes$ | async"
+        [class.mat-chip-selected]="(store.selectedIndexes$ | async).includes(index)"
+        (click)="toggleSelectedIndex(index)">
         {{ index }}
       </mat-chip>
     </mat-chip-list>

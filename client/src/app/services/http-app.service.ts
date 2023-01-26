@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map, Observable } from "rxjs";
 import { CalculatedIndexes } from "../models/calculated-indexes";
+import { CalculatedValuePayload } from "../models/calculated-value-payload";
 
 @Injectable({
   providedIn: "root"
@@ -12,7 +13,7 @@ export class HttpAppService {
 
   public getAlreadyCalculatedFibonacciValues(): Observable<any> {
     const url = '/api/values/current';
-    return this.http.get<any>(url)
+    return this.http.get<CalculatedValuePayload>(url)
   }
 
   public getAlreadyCalculatedValuesIndexes(): Observable<number[]> {

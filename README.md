@@ -18,7 +18,6 @@ Ponieżej przedstawiony jest widok kalkulatora
 Drugi screen przedstawia widok z danymi autora
 ![screen14](./img/screen14.png)
 
-
 ## Tworzenie bazy danych PostgreSQL za pomocą usługi RDS
 Poniższy screen prezentuje zastosowane ustawienia przy tworzeniu bazy danych PostgreSQL
 ![screen1](./img/screen1.png)

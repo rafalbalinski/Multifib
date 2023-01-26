@@ -10,4 +10,7 @@ export class AvailableIndexes {
 
   constructor(public store: AppStoreService) { }
 
+  public toggleSelectedIndex(index: number) {
+    this.store.toggleSelectedIndex(index);
+  }
 }
