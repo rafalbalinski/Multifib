@@ -78,19 +78,19 @@ dodając zmienne używane w kodzie aplikacji. Konfigurację tych zmiennych
 ilustruje poniższy screen:
 ![screen8](./img/screen12.png)
 
-<a href=https://github.com/rafalbalinski/Multifib/blob/master/README_POSTGRESQL.md>
+<a href="https://github.com/rafalbalinski/Multifib/blob/master/README_POSTGRESQL.md">
     <h2>Tworzenie bazy danych PostgreSQL za pomocą usługi RDS</h2> 
 </a>
 
-<a href=https://github.com/rafalbalinski/Multifib/blob/master/README_REDIS.md>
+<a href="https://github.com/rafalbalinski/Multifib/blob/master/README_REDIS.md">
     <h2>Tworzenie bazy danych Redis za pomocą usługi ElastiCache</h2> 
 </a>
 
-<a href=https://github.com/rafalbalinski/Multifib/blob/master/README_SECURITY_GROUP.md>
+<a href="https://github.com/rafalbalinski/Multifib/blob/master/README_SECURITY_GROUP.md">
     <h2>Tworzenie grupy bezpieczeństwa</h2> 
 </a>
 
-<a href=https://github.com/rafalbalinski/Multifib/blob/master/README_AWS_CLI.md>
+<a href="https://github.com/rafalbalinski/Multifib/blob/master/README_AWS_CLI.md">
     <h2>AWS CLI</h2> 
 </a>
 
