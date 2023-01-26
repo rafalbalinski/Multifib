@@ -1,27 +1,56 @@
-# Client
+# FibCalc Rafał Baliński
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+Projekt fibcalc jest zmodyfikowaną wersją aplikacji z 
+zajęc laboratoryjnych "Programowanie Full Stack w 
+Chumrze Obliczeniowej". Zmianie uległa część Frontendowa (kliencka) 
+aplikacji. Została ona napisana od postaw w Angularze w wersji 14.2.10.
 
-## Development server
+Aplikacja będzie dostępna po tym [linkiem](http://rbmultifib-env.eba-ntaaqh2z.us-east-1.elasticbeanstalk.com/calculator)
+do dnia 29.01.2023. Potem zostanie usunięta
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Obrazy aplikacji dostępne są na platformie docker hub pod tym [linkiem](https://hub.docker.com/r/rafalbalinski/fullstack). Można je także pobrać wykonując komendę <br> 
+`docker pull rafalbalinski/fullstack`
 
-## Code scaffolding
+## Zrzuty ekranowe aplikacji
+Ponieżej przedstawiony jest widok kalkulatora
+![screen13](./img/screen13.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Drugi screen przedstawia widok z danymi autora
+![screen14](./img/screen14.png)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tworzenie bazy danych PostgreSQL za pomocą usługi RDS
+Poniższy screen prezentuje zastosowane ustawienia przy tworzeniu bazy danych PostgreSQL 
+![screen1](./img/screen1.png)
 
-## Running unit tests
+Jak widać instancja bazy została poprawnie utworzona oraz działa, co wskazuje status **Available**
+![screen2](./img/screen2.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Tworzenie bazy danych Redis za pomocą usługi ElastiCache
+Poniższy screeny prezentują zastosowane ustawienia przy tworzeniu bazy danych Redis
+![screen3](./img/screen3.png)
+![screen4](./img/screen4.png)
+![screen5](./img/screen5.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Jak widać instancja bazy została poprawnie utworzona oraz działa, co wskazuje status **Available**
+![screen6](./img/screen6.png)
 
-## Further help
+## Tworzenie grupy bezpieczeństwa
+Aby serwery mogłby się komunikować z bazami **postgreSQL** oraz **Redis** 
+należy utworzyć grupę bezpieczeństwa w której zdefiniowane zostanie 
+na jakich portach serwisy mogą się między sobą komunikować <br>
+![screen7](./img/screen7.png)
+![screen8](./img/screen8.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Następnie utworzoną grupe należy dodać do wszystkich trzech usług
+![screen8](./img/screen9.png)
+![screen8](./img/screen10.png)
+![screen8](./img/screen11.png)
+
+## Tworzenie usługi elastik 
+Po uprzednim utworzeniu środowiska w usłudzie Elastic Beanstalk, należy je skonfigurować
+dodając zmienne używane w kodzie aplikacji. Konfigurację tych zmiennych 
+ilustruje poniższy screen:
+![screen8](./img/screen12.png)
+
