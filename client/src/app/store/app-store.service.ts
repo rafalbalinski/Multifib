@@ -29,7 +29,7 @@ export class AppStoreService {
     this.alreadyCalculatedValuesIndexesLoading$.next(true);
     this.http.getAlreadyCalculatedValuesIndexes()
       .pipe(finalize(() => this.alreadyCalculatedValuesIndexesLoading$.next(false)))
-      .subscribe((values: any) => this.alreadyCalculatedValuesIndexes$.next(values.data));
+      .subscribe((values: number[]) => this.alreadyCalculatedValuesIndexes$.next(values.filter(value => value !== null)));
   }
 
   public calculateValue(index: number): void {
