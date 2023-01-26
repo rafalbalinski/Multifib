@@ -65,5 +65,5 @@ jobs:
           application_name: rbmultifib
           environment_name: Rbmultifib-env
           version_label: 0.0.1
-          region: eu-east-1
+          region: us-east-1
           deployment_package: deploy.zip
