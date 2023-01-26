@@ -3,6 +3,7 @@ import { BehaviorSubject, finalize, Subject } from "rxjs";
 import { HttpAppService } from "../services/http-app.service";
 import { CalculatedValue } from "../models/calculated-value";
 import { CalculatedValuePayload } from "../models/calculated-value-payload";
+import { MessagesService } from "../services/messages.service";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class AppStoreService {
 
   readonly selectedIndexes$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
 
-  constructor(private http: HttpAppService) {}
+  constructor(private http: HttpAppService,
+              private messages: MessagesService) {}
 
   public getAlreadyCalculatedFibonacciValues(): void {
     this.alreadyCalculatedFibonacciValuesLoading$.next(true);
@@ -59,8 +61,12 @@ export class AppStoreService {
           this.calculateValueSuccess$.next(true);
           this.getAlreadyCalculatedFibonacciValues();
           this.getAlreadyCalculatedValuesIndexes();
+          this.messages.showInfo(`successfully calculated the ${index}th value of the Fibonnaci sequence`);
         },
-        error: () => this.calculateValueSuccess$.next(false)
+        error: (error) => {
+          this.calculateValueSuccess$.next(false);
+          this.messages.showError(error.error);
+        }
       });
   }
 

@@ -21,6 +21,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatTableModule } from "@angular/material/table";
 import { LoadSpinnerComponent } from "./components/load-spinner/load-spinner.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const material = [
   MatToolbarModule,
@@ -31,7 +32,8 @@ const material = [
   MatChipsModule,
   MatListModule,
   MatTableModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatSnackBarModule
 ]
 
 @NgModule({

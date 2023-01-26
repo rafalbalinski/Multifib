@@ -12,3 +12,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-chip-list-wrapper {
   margin: 0 !important;
 }
+
+.mat-snack-bar-info {
+  background-color: #65b53f;
+  color: #FFF;
+
+  .mat-button {
+    color: #FFF;
+  }
+}
+
+.mat-snack-bar-error {
+  background-color: #f44336;
+  color: #FFF;
+
+  .mat-button {
+    color: #FFF;
+  }
+}
