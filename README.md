@@ -1,7 +1,8 @@
 [**Strona główna**](https://github.com/rafalbalinski/Multifib) |
 [Redis](https://github.com/rafalbalinski/Multifib/blob/master/README_REDIS.md) |
 [PostgreSQL](https://github.com/rafalbalinski/Multifib/blob/master/README_POSTGRESQL.md) |
-[Grupy bezpieczeństwa](https://github.com/rafalbalinski/Multifib/blob/master/README_SECURITY_GROUP.md)
+[Grupy bezpieczeństwa](https://github.com/rafalbalinski/Multifib/blob/master/README_SECURITY_GROUP.md) |
+[AWS CLI](https://github.com/rafalbalinski/Multifib/blob/master/README_AWS_CLI.md)
 
 # FibCalc Rafał Baliński
 
